@@ -7,7 +7,7 @@ from app.errors import (
 
 
 def go_to_cafe(friends: list[dict], cafe: Cafe) -> str:
-    friends_without_mast = sum(
+    friends_without_mask = sum(
         1 for friend in friends if not friend["wearing_a_mask"]
     )
 
@@ -26,6 +26,6 @@ def go_to_cafe(friends: list[dict], cafe: Cafe) -> str:
         return "All friends should be vaccinated"
 
     if mask_error_count:
-        return f"Friends should buy {friends_without_mast} masks"
+        return f"Friends should buy {friends_without_mask} masks"
 
     return f"Friends can go to {cafe.name}"
